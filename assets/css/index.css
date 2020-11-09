@@ -1,0 +1,29 @@
+.service{
+  margin-left: 590px;
+  margin-top: 70px;
+}
+.bw1{
+  margin-left: 100px;
+}
+.text{
+  margin-top: 100px;
+  text-align: center;
+}
+.navbar{
+  background-color: #aeebf3;
+  font-size: large;
+}
+
+.left{
+  margin-top: 180px;
+}
+
+.judul,h3,.desc,button{
+  margin-left: 100px;
+}
+
+.page-footer{
+  background-color: #aeebf3;
+}
+
+
