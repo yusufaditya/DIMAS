@@ -1,16 +1,22 @@
 <head>
     <title>@yield('title')</title>
+    <link rel="shortcut icon" href="rimas.ico" type="image/x-icon">
     <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/index.css')}}">
     <link rel="stylesheet" href="{{asset('assets/fontawesome-free/css/fontawesome.min.css')}}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <style rel="text/css">
+        .landing {
+            background-image: url("assets/img/web.png");
+            background-size: cover;
+        }
+    
+    </style>
     @yield('plugin')
 </head>
 
 <body>
-    @yield('style')
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-danger fixed-top">
         <div class="ml-4">
@@ -32,10 +38,10 @@
                 <li class="nav-item ml-5">
                     <a class="nav-link text-white" href="{{route('/service')}}">Service</a>
                 </li>
-                <li class="nav-item ml-5 ">
+                <li class="nav-item ml-5">
                     <a class="nav-link text-white" href="{{route('/contact')}}">Contact</a>
                 </li>
-                <li class="nav-item mr-3">
+                <li class="nav-item ml-5 mr-5">
                     <button class="btn btn-primary"> login</button>
                 </li>
             </ul>

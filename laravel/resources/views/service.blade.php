@@ -1,21 +1,11 @@
 @extends('layouts.landing')
 
-@section('title','DIMAS')
-
-@section('style')
-<style rel="text/css">
-    .serfis {
-        background-image: url("assets/img/web.png");
-        height: 100%;
-    }
-
-</style>
-@endsection
+@section('title','DIMAS - Service')
 
 @section('mainContent')
 <div class="col">
     <!-- vector -->
-    <div class="serfis row mt-5">
+    <div class="landing row mt-5">
         <div class=" left col-md-6 ">
             <h1 class="judul">Our Service</h1>
             <h3>DIMAS</h3>
@@ -24,7 +14,7 @@
             </p>
         </div>
         <div class="col-md-6 mt-5">
-            <center><img src="{{asset('assets/img/webw.png')}}" width="450" height="450"></center>
+            <center><img src="{{asset('assets/img/webg.png')}}" width="450" height="450"></center>
         </div>
     </div>
     <!-- End of vector -->
