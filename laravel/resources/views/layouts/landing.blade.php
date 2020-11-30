@@ -16,7 +16,7 @@
     @yield('plugin')
 </head>
 
-<body>
+<body class="container-fluid">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-danger fixed-top">
         <div class="ml-4">
@@ -42,16 +42,24 @@
                     <a class="nav-link text-white" href="{{route('/contact')}}">Contact</a>
                 </li>
                 <li class="nav-item ml-5 mr-5">
-                    <button class="btn btn-primary"> login</button>
+                    <a class="btn btn-primary" role="button" href="{{route('/login')}}">login</a>
                 </li>
             </ul>
         </div>
     </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-danger">
+        <div class="ml-4">
+            <a class="navbar-brand text-white" href="{{route('/')}}"><img class="image mb-2" src="assets/img/rimas.png" width="30" height="30"> IMAS</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
     <!-- End of Navbar -->
 
-    <div class="main content">
         @yield('mainContent')
-    </div>
 </body>
 
 <!-- script display -->
