@@ -4,9 +4,9 @@
 
 @section('mainContent')
 <!-- vector -->
-<div class="landing row">
+<div class="landing row p-2">
     <div class="col-1"> {{-- OFFSET--}} </div>
-    <div class="col-md m-auto">
+    <div class="col-md m-auto p-5">
         <h1>Contact Us</h1>
         <h3>DIMAS</h3>
         <p>Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet Lorem Ipsum dolor</p>

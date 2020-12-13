@@ -56,7 +56,7 @@
         <div class="col-2 bg-light h-100" style="position: fixed;">
             
             {{-- Home --}}
-            <a href="#" class="sidebar-link @yield('home')">
+            <a href="{{route('/dashboard')}}" class="sidebar-link @yield('home')">
                 <div class="row sidebar-link @yield('home')">
                     <div class="col-1 m-3"><i class="fa fa-home fa-2x" aria-hidden="true"></i></div>
                     <div class="col align-self-center">Home</div>
@@ -64,7 +64,7 @@
             </a>
 
             {{-- Schedule --}}
-            <a href="#" class="sidebar-link @yield('schedule')">
+            <a href="{{route('/schedule')}}" class="sidebar-link @yield('schedule')">
                 <div class="row sidebar-link @yield('schedule')">
                     <div class="col-1 m-3"><i class="fa fa-calendar fa-2x" aria-hidden="true"></i></div>
                     <div class="col align-self-center">Schedule</div>

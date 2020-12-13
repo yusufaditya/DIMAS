@@ -6,7 +6,7 @@
 {{-- JOIN NOW --}}
 <div class="landing row">
     <div class="col-1"> {{-- OFFSET--}} </div>
-    <div class="col-md m-auto">
+    <div class="col-md m-auto p-5">
         <h1>DIMAS</h1>
         <h3>Digital Marketing Service</h3>
         <p>Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet Lorem Ipsum dolor

@@ -40,3 +40,7 @@ Route::get('/login', function () {
 Route::get('/dashboard', function () {
     return view('dashboard.index');
 })->name('/dashboard');
+
+Route::get('/schedule', function () {
+    return view('dashboard.schedule');
+})->name('/schedule');
