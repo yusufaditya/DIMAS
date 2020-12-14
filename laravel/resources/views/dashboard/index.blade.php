@@ -8,19 +8,84 @@
 
 @section('content')
 
-    <div class="row p-4 border-bottom">
-        {{-- Profile Icon --}}
-        <div class="col-1 m-auto"><i class="fa fa-user-circle fa-3x text-black-50" aria-hidden="true"></i></div>
-        {{-- Welcome & Plan --}}
-        <div class="col m-auto">
-            <div class="row"><h5>Welcome, @user!</h5></div>
-            <div class="row"><h5 class="text-muted">#nama paket</h5></div>
+<div class="row p-4 border-bottom">
+    {{-- Profile Icon --}}
+    <div class="col-auto m-auto"><i class="fa fa-user-circle fa-3x text-black-50" aria-hidden="true"></i></div>
+    {{-- Welcome & Plan --}}
+    <div class="col">
+        <div class="row">
+            <h5>Welcome, @user!</h5>
         </div>
-        {{-- Buy / Recharge Plan --}}
-        <div class="col-2 m-auto"><button class="btn-primary rounded p-2 pr-3 pl-3">Buy a Plan</button></div>
+        <div class="row">
+            <h5 class="text-muted">#nama paket</h5>
+        </div>
     </div>
+    {{-- Buy / Recharge Plan --}}
+    <div class="col m-auto text-right"><button class="btn-primary rounded p-2 pr-3 pl-3">Buy a Plan</button></div>
+</div>
+
+<div class="row p-4">
+    {{-- Left Section : Activity & Package Info --}}
+    <div class="col-md mr-3">
+        {{-- Account Activity --}}
+        <div class="row">
+            <div class="col mb-3 card">
+                <h5 class="card-title mt-3 pl-2 pb-2 border-bottom">Account Activity</h5>
+                <canvas class="col" id="accountActivity" width="300" height="100"></canvas>
+                <script>
+                    var ctx = document.getElementById('accountActivity').getContext('2d');
+                    var myChart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu',
+                                'Minggu'
+                            ],
+                            datasets: [{
+                                label: 'Followers',
+                                data: [12, 19, 3, 5, 2, 3, 8],
+                                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                borderColor: 'rgba(255, 99, 132, 1)',
+                                borderWidth: 1,
+                                fill: false
+                            }, {
+                                label: 'Interaction',
+                                data: [14, 16, 5, 13, 22, 6, 2],
+                                backgroundColor: 'rgba(92, 128, 170, 0.4)',
+                                borderColor: 'rgba(92, 128, 170, 1)',
+                                borderWidth: 1,
+                                fill: false
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero: true
+                                    }
+                                }]
+                            }
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+
+        {{-- Package Information --}}
+        <div class="row">
+            <div class="col card mb-3">
+                <h5 class="card-title mt-3 pl-2 pb-2 border-bottom">Package Information</h5>
+                <div class="card-text"></div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Right Section : Last Log --}}
+    <div class="col-md mr-3 card">
+        <h5 class="card-title mt-3 pl-2 pb-2 border-bottom">Last Log in DMS</h5>
+        <div class="card-text"></div>
+    </div>
+</div>
 @endsection
 
 @section('home', 'active')
 @section('schedule', '')
-    
