@@ -50,50 +50,54 @@
 </div>
 
 {{-- Our Service : Section --}}
-<div class="row mt-3">
+<div class="row mt-3 btn-group-toggle" data-toggle="buttons">
     {{-- Social Media Monitoring --}}
-    <div class="col-md-3" id="smmm">
+    <div class="col-md-3">
         <center>
-            <div class="card">
+            <div id="smmm" class="card btn btn-outline-info">
+                <input type="radio" name="service" hidden checked>
                 <div class="card-body">
                     <h5 class="card-title">Social Media Monitoring</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Our Service</h6>
+                    <h6 class="card-subtitle mb-2">Our Service</h6>
                 </div>
             </div>
         </center>
     </div>
 
     {{-- Building Website --}}
-    <div class="col-md-3" id="bwm">
+    <div class="col-md-3">
         <center>
-            <div class="card">
+            <div id="bwm" class="card btn btn-outline-info">
+                <input type="radio" name="service" hidden>
                 <div class="card-body">
                     <h5 class="card-title">Building Website</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Our Service</h6>
+                    <h6 class="card-subtitle mb-2">Our Service</h6>
                 </div>
             </div>
         </center>
     </div>
 
     {{-- Thematic Posting --}}
-    <div class="col-md-3" id="tpm">
+    <div class="col-md-3">
         <center>
-            <div class="card">
+            <div id="tpm" class="card btn btn-outline-info">
+                <input type="radio" name="service" hidden>
                 <div class="card-body">
                     <h5 class="card-title">Thematic Posting</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Our Service</h6>
+                    <h6 class="card-subtitle mb-2">Our Service</h6>
                 </div>
             </div>
         </center>
     </div>
 
     {{-- Schedule Posting --}}
-    <div class="col-md-3" id="spm">
+    <div class="col-md-3">
         <center>
-            <div class="card">
+            <div id="spm" class="card btn btn-outline-info">
+                <input type="radio" name="service" hidden>
                 <div class="card-body">
                     <h5 class="card-title">Schedule Posting</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Our Service</h6>
+                    <h6 class="card-subtitle mb-2">Our Service</h6>
                 </div>
             </div>
         </center>
@@ -251,6 +255,5 @@
         $('#tp').hide();
         $('#smm').hide();
     });
-
 </script>
 @endsection

@@ -1,7 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('landingPage');
 })->name('/');
 
@@ -29,28 +30,20 @@ Route::get('/about', function () {
     return view('about');
 })->name('/about');
 
-Route::get('/register', function () {
-    return view('register');
-})->name('/register');
+Route::get('/register', [AuthController::class, 'getRegister'])->name('/register')->middleware('guest');
+Route::post('/register', [AuthController::class, 'postRegister'])->name('post.register')->middleware('guest');
 
-Route::get('/login', function () {
-    return view('login');
-})->name('/login');
+Route::get('/login', [AuthController::class, 'getLogin'])->name('/login')->middleware('guest');
+Route::post('/login', [AuthController::class, 'postLogin'])->name('post.login')->middleware('guest');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-})->name('/dashboard');
+Route::group(['middleware' => 'auth'], function(){
 
-Route::get('/schedule', function () {
-    return view('dashboard.schedule');
-})->name('/schedule');
+    Route::get('/dashboard', function () {
+        return view('dashboard.index');
+    })->name('/dashboard');
 
-
-// Route::get('/register', function () {
-//     return view('register');
-// })->name('/register');
-
-Route::get('/register', [AuthController::class, 'getRegister'])->name('/register');
-Route::post('/register', [AuthController::class, 'postRegister'])->name('post.register');
-
-Route::get('/login', [AuthController::class, 'postLogin'])->name('post.login');
+    Route::get('/schedule', function () {
+        return view('dashboard.schedule');
+    })->name('/schedule');
+});

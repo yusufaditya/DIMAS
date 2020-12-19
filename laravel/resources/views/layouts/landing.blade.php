@@ -1,6 +1,6 @@
 <head>
     <title>@yield('title')</title>
-    <link rel="shortcut icon" href="rimas.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('rimas.ico')}}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
@@ -13,14 +13,13 @@
             background-image: url("assets/img/web.png");
             background-size: cover;
         }
-    
     </style>
 </head>
 
 <body class="container-fluid">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-danger fixed-top p-0">
-        <a class="navbar-brand text-white ml-4 p-2" href="{{route('/')}}"><img class="image mb-2" src="assets/img/rimas.png" width="30" height="30"> IMAS</a>
+        <a class="navbar-brand text-white ml-4 p-2" href="{{route('/')}}"><img class="image mb-2" src="{{asset('assets/img/rimas.png')}}" width="30" height="30"> IMAS</a>
         
         <button class="navbar-toggler p-3" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
