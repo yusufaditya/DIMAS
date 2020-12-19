@@ -12,7 +12,7 @@
 <body class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-danger fixed-top">
         <a class="navbar-brand text-white ml-4" href="{{route('/')}}"><img class="image mb-2" src="assets/img/rimas.png" width="30" height="30"> IMAS</a>
-        
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"><i class="fa fa-bars p-1 text-info" aria-hidden="true"></i></span>
@@ -30,7 +30,8 @@
 
     <nav class="navbar navbar-expand-lg navbar-danger">
         <div class="ml-4">
-            <a class="navbar-brand text-white" href="{{route('/')}}"><img class="image mb-2" src="assets/img/rimas.png" width="30" height="30"> IMAS</a>
+            <a class="navbar-brand text-white" href="{{route('/')}}"><img class="image mb-2" src="assets/img/rimas.png"
+                    width="30" height="30"> IMAS</a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,7 +55,7 @@
 
         {{-- Sidebar --}}
         <div class="col-2 bg-light h-100" style="position: fixed;">
-            
+
             {{-- Home --}}
             <a href="{{route('/dashboard')}}" class="sidebar-link @yield('home')">
                 <div class="row sidebar-link @yield('home')">
@@ -70,6 +71,22 @@
                     <div class="col align-self-center">Schedule</div>
                 </div>
             </a>
+
+            {{-- Sign Out --}}
+            <form id="logout" method="POST" action="#" class="m-0">@csrf</form>
+            <a href="#" class="sidebar-link" onclick="logout()">
+                <div class="row sidebar-link">
+                    <div class="col-1 m-3"><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i></div>
+                    <div class="col align-self-center">Sign Out</div>
+                </div>
+            </a>
         </div>
     </div>
+
+    <script>
+        function logout() {
+            event.preventDefault();
+            document.getElementById('logout').submit();
+        }
+    </script>
 </body>

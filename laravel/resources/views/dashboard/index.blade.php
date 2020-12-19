@@ -21,7 +21,7 @@
         </div>
     </div>
     {{-- Buy / Recharge Plan --}}
-    <div class="col m-auto text-right"><button class="btn-primary rounded p-2 pr-3 pl-3">Buy a Plan</button></div>
+    <a class="col m-auto text-right" href="{{route('/plan')}}"><button class="btn-primary rounded p-2 pr-3 pl-3">Buy a Plan</button></a>
 </div>
 
 <div class="row p-4">

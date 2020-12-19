@@ -47,6 +47,14 @@ Route::get('/schedule', function () {
     return view('dashboard.schedule');
 })->name('/schedule');
 
+Route::get('/plan', function () {
+    return view('dashboard.buy_plan');
+})->name('/plan');
+
+Route::get('/theme', function () {
+    return view('dashboard.buy_theme');
+})->name('/theme');
+
 // Admin Dashboard
 Route::get('/admin/login', function () {
     return view('admin.login');
