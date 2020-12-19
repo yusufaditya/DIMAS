@@ -73,8 +73,7 @@
             </a>
 
             {{-- Sign Out --}}
-            <form id="logout" method="POST" action="#" class="m-0">@csrf</form>
-            <a href="#" class="sidebar-link" onclick="logout()">
+            <a href="{{ route('logout') }}" class="sidebar-link" >
                 <div class="row sidebar-link">
                     <div class="col-1 m-3"><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i></div>
                     <div class="col align-self-center">Sign Out</div>

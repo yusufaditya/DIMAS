@@ -36,8 +36,45 @@ Route::post('/register', [AuthController::class, 'postRegister'])->name('post.re
 Route::get('/login', [AuthController::class, 'getLogin'])->name('/login')->middleware('guest');
 Route::post('/login', [AuthController::class, 'postLogin'])->name('post.login')->middleware('guest');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+// Client Dashboard
+Route::get('/dashboard', function () {
+    return view('dashboard.index');
+})->name('/dashboard');
 
-Route::group(['middleware' => 'auth'], function(){
+Route::get('/schedule', function () {
+    return view('dashboard.schedule');
+})->name('/schedule');
+
+Route::get('/plan', function () {
+    return view('dashboard.buy_plan');
+})->name('/plan');
+
+Route::get('/theme', function () {
+    return view('dashboard.buy_theme');
+})->name('/theme');
+
+// Admin Dashboard
+Route::get('/admin/login', function () {
+    return view('admin.login');
+})->name('/admin/login');
+
+Route::get('/admin', function () {
+    return view('admin.index');
+})->name('/admin');
+
+Route::get('/admin/schedule/id', function () {
+    return view('admin.schedule');
+})->name('/admin/schedule/id');
+
+Route::get('/admin/schedule/id/edit/', function () {
+    return view('admin.post');
+})->name('/admin/schedule/id/edit');
+
+Route::get('/admin/schedule/id/edit/id', function () {
+    return view('admin.post');
+});
+
+//Route::group(['middleware' => 'auth'], function(){
 
     Route::get('/dashboard', function () {
         return view('dashboard.index');
@@ -46,4 +83,4 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/schedule', function () {
         return view('dashboard.schedule');
     })->name('/schedule');
-});
+//});
