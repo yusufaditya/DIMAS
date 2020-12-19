@@ -44,3 +44,13 @@ Route::get('/dashboard', function () {
 Route::get('/schedule', function () {
     return view('dashboard.schedule');
 })->name('/schedule');
+
+
+// Route::get('/register', function () {
+//     return view('register');
+// })->name('/register');
+
+Route::get('/register', [AuthController::class, 'getRegister'])->name('/register');
+Route::post('/register', [AuthController::class, 'postRegister'])->name('post.register');
+
+Route::get('/login', [AuthController::class, 'postLogin'])->name('post.login');
