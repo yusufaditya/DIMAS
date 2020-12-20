@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ScheduleController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +21,10 @@ Route::get('/home', function () {
     return view('landingPage');
 })->name('/');
 
+Route::get('/', function () {
+    return view('landingPage');
+});
+
 Route::get('/contact', function () {
     return view('contact');
 })->name('/contact');
@@ -30,11 +37,11 @@ Route::get('/about', function () {
     return view('about');
 })->name('/about');
 
-Route::get('/register', [AuthController::class, 'getRegister'])->name('/register')->middleware('guest');
-Route::post('/register', [AuthController::class, 'postRegister'])->name('post.register')->middleware('guest');
+Route::get('/register', [AuthController::class, 'getRegister'])->name('/register');
+Route::post('/register', [AuthController::class, 'postRegister'])->name('post.register');
 
-Route::get('/login', [AuthController::class, 'getLogin'])->name('/login')->middleware('guest');
-Route::post('/login', [AuthController::class, 'postLogin'])->name('post.login')->middleware('guest');
+Route::get('/login', [AuthController::class, 'getLogin'])->name('/login');
+Route::post('/login', [AuthController::class, 'postLogin'])->name('post.login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 // Client Dashboard
 Route::get('/dashboard', function () {
@@ -62,25 +69,26 @@ Route::get('/admin', function () {
     return view('admin.index');
 })->name('/admin');
 
-Route::get('/admin/schedule/id', function () {
+Route::get('/admin/schedule/{id}', function(){
     return view('admin.schedule');
-})->name('/admin/schedule/id');
+})->name('/admin/schedule/');
 
-Route::get('/admin/schedule/id/edit/', function () {
-    return view('admin.post');
-})->name('/admin/schedule/id/edit');
+Route::post('/admin/schedule/create', [ScheduleController::class, 'store']);
 
-Route::get('/admin/schedule/id/edit/id', function () {
-    return view('admin.post');
-});
+Route::get('/admin/schedule/edit/{id}', [ScheduleController::class, 'edit'])->name('/admin/schedule/edit');
 
-//Route::group(['middleware' => 'auth'], function(){
+Route::patch('/admin/schedule/edit', [ScheduleController::class, 'update']);
 
-    Route::get('/dashboard', function () {
-        return view('dashboard.index');
-    })->name('/dashboard');
+Route::delete('/admin/schedule/delete', [ScheduleController::class, 'destroy']);
+
+Route::group(['middleware' => 'auth'], function(){
+
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('/dashboard');
 
     Route::get('/schedule', function () {
         return view('dashboard.schedule');
     })->name('/schedule');
-//});
+
+});
+
+Route::get('/getCalendarData/{id}',[ScheduleController::class,'getData']);

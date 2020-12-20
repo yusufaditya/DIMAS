@@ -13,7 +13,7 @@
             </div>
 
             <div class="text-center">
-                <form action="#" method="POST">
+                <form action="{{ route('post.register') }}" method="POST">
                     @csrf
                     {{-- Row 1 : Nama & Username --}}
                     <div class="form-row mb-4">

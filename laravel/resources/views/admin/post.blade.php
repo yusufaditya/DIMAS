@@ -56,7 +56,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Name</span>
                             </div>
-                            <input type="text" class="form-control text-muted" name="name" value="John Doe" readonly>
+                            <input type="text" class="form-control text-muted" name="name" value="{{ $user->name }}" readonly>
                         </div>
                     </td>
 
@@ -66,7 +66,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Date</span>
                             </div>
-                            <input type="text" class="form-control text-muted" name="date" value="22/12/2020" readonly>
+                            <input type="text" class="form-control text-muted" name="date" value="{{ $schedule->start }}" readonly>
                         </div>
                     </td>
                 </tr>
@@ -78,7 +78,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Username</span>
                             </div>
-                            <input type="text" class="form-control text-muted" name="username" value="johndoe" readonly>
+                            <input type="text" class="form-control text-muted" name="username" value="{{ $user->username }}" readonly>
                         </div>
                     </td>
 
@@ -88,7 +88,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Title</span>
                             </div>
-                            <input type="text" class="form-control" name="title" value="" placeholder="Title">
+                            <input type="text" class="form-control" name="title" value="{{ $schedule->title }}" placeholder="Title">
                         </div>
                     </td>
                 </tr>
@@ -99,7 +99,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Description</span>
                             </div>
-                            <textarea class="form-control" name="description" placeholder="Description"></textarea>
+                            <textarea class="form-control" name="description" placeholder="Description"> {{ $schedule->description }}</textarea>
                         </div>
                     </td>
                 </tr>
@@ -119,11 +119,11 @@
                 </tr>
             </table>
             <div class="row row-cols-2">
-                <div class="col-auto"><img id="output" src="" class="img-fluid" height="200" width="200" /></div>
+                <div class="col-auto"><img id="output" src="{{ $schedule->image }}" class="img-fluid" height="200" width="200" /></div>
             </div>
             <div class="row">
                 <div class="col text-right">
-                    <a class="btn btn-danger" href="{{route('/admin/schedule/id')}}">Cancel</a>
+                    <a class="btn btn-danger" href="{{ URL::previous() }}">Cancel</a>
                     <button class="btn btn-success" type="submit">Save</button>
                 </div>
             </div>

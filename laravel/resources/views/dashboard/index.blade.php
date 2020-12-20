@@ -14,10 +14,10 @@
     {{-- Welcome & Plan --}}
     <div class="col">
         <div class="row">
-            <h5>Welcome, @user!</h5>
+            <h5>Welcome, {{ Auth::user()->name }}!</h5>
         </div>
         <div class="row">
-            <h5 class="text-muted">#nama paket</h5>
+            <h5 class="text-muted">{{ !empty($paket)? "#" . $paket->paket : "No plan yet!" }}</h5>
         </div>
     </div>
     {{-- Buy / Recharge Plan --}}
