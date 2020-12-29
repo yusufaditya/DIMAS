@@ -4,9 +4,9 @@
 
 @section('mainContent')
 <div class="landing row">
-    <div class="col-md m-auto"><img src="assets/img/webw.png" class="img-fluid p-4"></div>
-    <div class="col-md m-auto" style="padding: 3rem;">
-        <div class="col rounded card" style="background: #ffffff; padding: 2rem;">
+    <div class="col-md m-auto"><img src="assets/img/webw.png" class="img-fluid p-5"></div>
+    <div class="col-md m-auto">
+        <div class="col rounded card bg-white p-4">
             {{-- Header --}}
             <div class="mb-4 text-center">
                 <h4>Login</h4>

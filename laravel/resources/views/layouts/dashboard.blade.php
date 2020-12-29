@@ -39,15 +39,6 @@
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                {{-- Kalo belum Login --}}
-                <li class="nav-item ml-5">
-                    <a class="nav-link text-primary" href="{{route('/login')}}">Login</a>
-                </li>
-            </ul>
-        </div>
     </nav>
 
     <div class="row">

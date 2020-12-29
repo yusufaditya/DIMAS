@@ -11,7 +11,7 @@ class AuthController extends Controller
     //
     public function getLogin()
     {
-        return view('login');
+        return view('/login');
     }
 
     public function postLogin(Request $request)
@@ -23,7 +23,7 @@ class AuthController extends Controller
             // Authentication passed...
             return redirect()->intended('/dashboard');
         }
-        return redirect('login')->with('error','Username / Password salah!');
+        return redirect('/login')->with('error','Username / Password salah!');
 
     }
 
@@ -53,9 +53,9 @@ class AuthController extends Controller
         ]);
         
         if($request){
-            return redirect('login')->with('success', 'Register Berhasil, silakan Login ');
+            return redirect('/login')->with('success', 'Register Berhasil, silakan Login ');
          }else{
-             return redirect('login')->with('error', 'Register Gagal');
+             return redirect('/login')->with('error', 'Register Gagal');
          } 
     } 
 
