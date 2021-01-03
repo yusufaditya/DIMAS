@@ -61,7 +61,26 @@ class ScheduleController extends Controller
      */
     public function show($id)
     {
-       
+        $allData = Schedule::all();
+        $data = Schedule::findOrFail($id);
+        $diff = date_diff(date_create($data->start),date_create($data->end));
+        $i = $data->id;
+        if($diff->format("%a") == "1"){
+            $data->tanggal = $data->start;
+        }else{
+            $data->tanggal = $data->start . " - " . $data->end;
+        }
+        while($i !=0 ){
+            $i--;
+            @$data->prev_page = Schedule::where('id', $i)->where('id_pemilik', Auth::id())->first()->id;
+        }
+        $i = $data->id;
+        $lastId = Schedule::orderBy('id','desc')->first()->id;
+        while($i <= $lastId){
+            $i++;
+            @$data->next_page = Schedule::where('id', $i)->where('id_pemilik', Auth::id())->first()->id;
+        }
+        return view('schedule_detail', compact('data','allData'));
     }
 
     /**
@@ -74,6 +93,13 @@ class ScheduleController extends Controller
     {
         $schedule = Schedule::find($id);
         $user = User::find($schedule->id_pemilik);
+        $diff = date_diff(date_create($schedule->start),date_create($schedule->end));
+        $i = $schedule->id;
+        if($diff->format("%a") == "1"){
+            $schedule->tanggal = $schedule->start;
+        }else{
+            $schedule->tanggal = $schedule->start . " - " . $schedule->end;
+        }
         return view('admin.post', compact('schedule','user'));
     }
 
@@ -86,8 +112,22 @@ class ScheduleController extends Controller
      */
     public function update(Request $request)
     {
+        if($request->hasFile('gambar')){
+            $request->validate([
+              'gambar' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            ]);
+            $path = $request->file('gambar')->store('public/images');
+            $request->gambar = $path;
+            $status = Schedule::find($request->id)->update(['gambar' => $request->gambar]);
+        }
         $status = Schedule::find($request->id)->update(['title'=>$request->title,'start'=>$request->start,'end'=>$request->end]);
-        return response(['message'=>$status]);
+        if($request->page == 'edit page'){
+            $status = Schedule::find($request->id)->update(['title'=>$request->title,'start'=>$request->start,'end'=>$request->end,'deskripsi'=>$request->description]);
+            return redirect('schedule/edit/' . $request->id)->with('success',"Data berhasi diubah!");
+        }else{
+            $status = Schedule::find($request->id)->update(['title'=>$request->title,'start'=>$request->start,'end'=>$request->end]);
+            return response(['message'=>$status]);
+        }
     }
 
     /**

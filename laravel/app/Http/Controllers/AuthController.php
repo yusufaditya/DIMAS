@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Paket;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -21,6 +22,12 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             // Authentication passed...
+            date_default_timezone_set("Asia/Jakarta");
+            session_start();
+            $_SESSION['last_login'] = User::select('last_login')->where('id', Auth::id())->first()->last_login;
+            User::where('id' , Auth::id())
+            ->update(['last_login' => date('Y-m-d H:i:s')]);
+            checkPackageExpiration();
             return redirect()->intended('/dashboard');
         }
         return redirect('/login')->with('error','Username / Password salah!');
@@ -38,7 +45,7 @@ class AuthController extends Controller
         //dd($request);
         $this->validate($request, [
             'name'=> 'required|string|min:4',
-            'username'=> 'required|string',
+            'username'=> 'required|string|unique:users',
             'email'=> 'required|email|unique:users',
             'no_hp'=> 'required|numeric',
             'password'=> 'required|min:6|same:confirmPassword'

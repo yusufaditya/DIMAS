@@ -420,7 +420,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <h5 class="card-title text-center">
-                                        Premium Medsos
+                                        Premium Social Media
                                     </h5>
                                     <h6 class="card-subtitle mb-2 text-muted text-center">
                                         1 Year Access (Full Access)
@@ -639,6 +639,15 @@
                     </div>
                 </label>
             </div>
+            {{-- Offline --}}
+            <div class="col p-2">
+                <label class="card payment" for="payOffline">
+                    <div class="card-body">
+                        <h4 class="card-title">Offline</h4>
+                        <p class="card-text">Offline.png</p>
+                    </div>
+                </label>
+            </div>
         </div>
 
         {{-- Plan Data --}}
@@ -693,6 +702,7 @@
         {{-- Payment --}}
         <input type="radio" name="payment" id="payAtm" value="ATM">
         <input type="radio" name="payment" id="payPaypal" value="Paypal">
+        <input type="radio" name="payment" id="payOffline" value="Offline">
         <button type="submit" id="submitButton">Submit</button>
     </form>
 </div>
@@ -788,5 +798,34 @@
         });
     }).change();
 
+</script>
+
+<script>
+    $(document).ready(function(){
+        $('form').on('submit', function(e){
+            e.preventDefault();
+            let paket = $("#rPlan").text();
+            let tema = $("#rTheme").text();
+            let payment = $("#rPayment").text();
+            
+            $.ajax({
+                url: "konfirmasi-beli-paket",
+                type: "POST",
+                data: {
+                    "paket" : paket,
+                    "tema" : tema,
+                    "payment" : payment
+                },
+                success : function( data ){
+                    Swal.fire(
+                        data.keterangan,
+                        data.message,
+                        data.status
+                    )
+                    window.location.href = "{{ route('/dashboard') }}"
+                }
+            });
+        })
+    });
 </script>
 @endsection

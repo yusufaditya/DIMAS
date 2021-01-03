@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PaketController;
 use App\Http\Controllers\ScheduleController;
 
 /*
@@ -52,10 +53,6 @@ Route::get('/schedule', function () {
     return view('dashboard.schedule');
 })->name('/schedule');
 
-Route::get('/plan', function () {
-    return view('dashboard.buy_plan');
-})->name('/plan');
-
 Route::get('/theme', function () {
     return view('dashboard.buy_theme');
 })->name('/theme');
@@ -73,13 +70,8 @@ Route::get('/admin/schedule/{id}', function(){
     return view('admin.schedule');
 })->name('/admin/schedule/');
 
-Route::post('/admin/schedule/create', [ScheduleController::class, 'store']);
 
-Route::get('/admin/schedule/edit/{id}', [ScheduleController::class, 'edit'])->name('/admin/schedule/edit');
 
-Route::patch('/admin/schedule/edit', [ScheduleController::class, 'update']);
-
-Route::delete('/admin/schedule/delete', [ScheduleController::class, 'destroy']);
 
 Route::group(['middleware' => 'auth'], function(){
 
@@ -88,6 +80,23 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/schedule', function () {
         return view('dashboard.schedule');
     })->name('/schedule');
+
+    Route::post('/konfirmasi-beli-paket', [PaketController::class, 'store']);
+
+
+    Route::post('/schedule/create', [ScheduleController::class, 'store']);
+
+    Route::get('/schedule/edit/{id}', [ScheduleController::class, 'edit'])->name('/admin/schedule/edit');
+
+    Route::patch('/schedule/edit', [ScheduleController::class, 'update']);
+
+    Route::delete('/schedule/delete', [ScheduleController::class, 'destroy']);
+
+    Route::get('/detail-schedule/{id}', [ScheduleController::class, 'show']);
+
+    Route::get('/plan', function () {
+        return view('dashboard.buy_plan');
+    })->name('/plan');
 
 });
 

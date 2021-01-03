@@ -12,6 +12,12 @@
                 <h4>Login</h4>
             </div>
 
+            @if(session('error'))
+            <div class="alert alert-danger">
+                <strong>Error!</strong> {{ session('error') }} 
+            </div>
+            @endif
+
             <div class="text-center">
                 <form action="#" method="POST">
                     @csrf

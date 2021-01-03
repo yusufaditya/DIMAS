@@ -7,127 +7,100 @@
 <script src="{{asset('/assets/fullCalendar/main.js')}}"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        var tanggalAwal, tanggalAkhir, id = 0,
-            selId;
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            themeSystem: 'bootstrap',
-            // Custom Button
-            customButtons: {
-                add: {
-                    click: function () {
-                        if (tanggalAwal != '' && tanggalAkhir != '') {
-                            var eventName = prompt('Masukan Nama Event');
-                            if (eventName != null && eventName != '') {
-                                calendar.addEvent({
-                                    id: id,
-                                    title: eventName,
-                                    start: tanggalAwal,
-                                    end: tanggalAkhir,
-                                    allday: true
-                                });
-
+        $.ajax({
+                type:'get',
+                url:'/getCalendarData/' + {{ Auth::id() }},
+                success:function(data){
+                console.log(data);
+            
+                var tanggalAwal, tanggalAkhir, id = 0, selId;
+                var calendarEl = document.getElementById('calendar');
+                var calendar = new FullCalendar.Calendar(calendarEl, {
+                    themeSystem: 'bootstrap',
+                    // Custom Button
+                    customButtons: {
+                        add: {
+                            click: function () {
+                                if (tanggalAwal != '' && tanggalAkhir != '') {
+                                    var eventName = prompt('Masukan Nama Event');
+                                    if(eventName!=null){
+                                        calendar.addEvent({
+                                            id: id,
+                                            title: eventName,
+                                            start: tanggalAwal,
+                                            end: tanggalAkhir,
+                                            allday: true
+                                        });
+                                        $.ajax({
+                                            url:'/schedule/create',
+                                            type:'post',
+                                            data:{
+                                                title: eventName,
+                                                start: tanggalAwal,
+                                                end: tanggalAkhir,
+                                                pemilik: {{ Auth::id() }},
+                                                allDay: 1
+                                            },
+                                            dataType:'json',
+                                            success:function(data){
+                                                console.log(data.message);
+                                            }
+                                        });
+                                    }
+                                    tanggalAwal = '';
+                                    tanggalAkhir = '';
+                                    id++;
+                                } else {
+                                    alert('Tidak ada tanggal yang dipilih');
+                                }
+                            },
+                        },
+                        detail: {
+                            click: function () {
+                                document.location.href = "/detail-schedule/"+selId;
                             }
-                            tanggalAwal = '';
-                            tanggalAkhir = '';
-                            id++;
-                        } else {
-                            alert('Tidak ada tanggal yang dipilih');
                         }
                     },
-                },
-                remove: {
-                    click: function () {
-                        if (selId != '') {
-                            var selectedEvent = calendar.getEventById(selId);
-                            selectedEvent.remove();
-                            alert('Anda menghapus Event "' + selectedEvent.title + '"');
-                            selId = '';
-                            calendarEl.getElementsByClassName('fc-remove-button')[0].setAttribute(
-                                'disabled', '');
-                            calendarEl.getElementsByClassName('fc-edit-button')[0].setAttribute(
-                                'disabled', '');
-                        } else {
-                            alert('Tidak ada event yang dipilih');
-                        }
-                    }
-                },
-                edit: {
-                    click: function () {
-                        if (selId != '') {
-                            var eventName = prompt('Edit Event');
-                            var selectedEvent = calendar.getEventById(selId);
-                            selectedEvent.setProp('title', eventName);
-                            selId = '';
-                            calendarEl.getElementsByClassName('fc-remove-button')[0].setAttribute(
-                                'disabled', '');
-                            calendarEl.getElementsByClassName('fc-edit-button')[0].setAttribute(
-                                'disabled', '');
-                        } else {
-                            alert('Tidak ada event yang dipilih');
-                        }
-                    }
-                }
-            },
-            bootstrapFontAwesome: {
-                remove: 'fa-trash',
-                add: 'fa-plus',
-                edit: 'fa-pencil'
-            },
-            // Header & Layout Setting
-            headerToolbar: {
-                start: 'prev,next',
-                center: 'title',
-                end: 'add edit remove'
-            },
-            initialView: 'dayGridMonth',
-            fixedWeekCount: false,
+                    bootstrapFontAwesome: {
+                        add: 'fa-plus',
+                        detail: 'fa-eye'
+                    },
+                    // Header & Layout Setting
+                    headerToolbar: {
+                        start: 'prev,next',
+                        center: 'title',
+                        end: 'detail'
+                    },
+                    initialView: 'dayGridMonth',
+                    fixedWeekCount: false,
 
-            // Select Behaviour
-            selectable: true,
-            select: function (info) {
-                tanggalAkhir = info.endStr;
-                tanggalAwal = info.startStr;
-                calendarEl.getElementsByClassName('fc-add-button')[0].removeAttribute('disabled');
-            },
-            unselect: function () {
-                setTimeout(() => {
-                    calendarEl.getElementsByClassName('fc-add-button')[0].setAttribute('disabled', '');
-                }, 50);
-            },
+                    // Select Behaviour
+                    selectable: true,
+                    select: function (info) {
+                        tanggalAkhir = info.endStr;
+                        tanggalAwal = info.startStr;
 
-            eventClick: function (info) {
-                selId = info.event.id;
-                calendarEl.getElementsByClassName('fc-remove-button')[0].removeAttribute(
-                    'disabled');
-                calendarEl.getElementsByClassName('fc-edit-button')[0].removeAttribute('disabled');
-            },
+                    },
+                    unselect: function () {
+                        calendarEl.getElementsByClassName('fc-detail-button')[0].setAttribute(
+                            'disabled', '');
+                    },
 
-            // Drag & Drop Behaviour
-            editable: true,
+                    eventClick: function (info) {
+                        selId = info.event.id;
+                        calendarEl.getElementsByClassName('fc-detail-button')[0].removeAttribute(
+                            'disabled');
+                    },
 
-            eventDrop: function (info) {
-                if (!confirm('Konfirmasi perubahan?')) {
-                    info.revert();
-                } else {
-                    alert('Nama : ' + info.event.title + "\nMulai : " + info.event.start
-                        .toISOString() + "\nSelesai : " + info.event.end.toISOString());
-                }
-            },
-
-            eventResize: function (info) {
-                if (!confirm('Konfirmasi perubahan?')) {
-                    info.revert();
-                } else {
-                    alert('Nama : ' + info.event.title + "\nMulai : " + info.event.start
-                        .toISOString() + "\nSelesai : " + info.event.end.toISOString());
-                }
+                    // Drag & Drop Behaviour
+                    editable: true,
+                    
+                    events: data
+                });
+                calendar.render();
+                calendarEl.getElementsByClassName('fc-detail-button')[0].setAttribute('disabled', '');
             }
         });
-        calendar.render();
-        calendarEl.getElementsByClassName('fc-add-button')[0].setAttribute('disabled', '');
-        calendarEl.getElementsByClassName('fc-remove-button')[0].setAttribute('disabled', '');
-        calendarEl.getElementsByClassName('fc-edit-button')[0].setAttribute('disabled', '');
     });
 
 </script>

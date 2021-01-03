@@ -44,10 +44,32 @@
 
 @section('mainContent')
 <div class="row h-100">
-    <div class="col-1"></div>
+    <div class="col-1 m-3 h3">
+        <a href="{{ url('admin/schedule/' . $schedule->id) }}">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        
+    </div>
     <div class="col m-5">
-        <form action="#" method="GET">
+        @if (session('success'))
+            <div class="alert alert-success text-center">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                @foreach ($errors->all() as $error)
+                    <li> {{ $error }} </li>
+                @endforeach
+                </ul>
+            </div>
+        @endif
+
+        <form action="/schedule/edit" method="POST" enctype="multipart/form-data">
             @csrf
+            @method('PATCH')
             <table class="table table-light rounded">
                 <tr>
                     {{-- Name --}}
@@ -66,7 +88,11 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Date</span>
                             </div>
-                            <input type="text" class="form-control text-muted" name="date" value="{{ $schedule->start }}" readonly>
+                            <input type="text" class="form-control text-muted" name="date" value="{{ @$schedule->tanggal }}" readonly>
+                            <input type="hidden" name="start" id="" value="{{ $schedule->start }}">
+                            <input type="hidden" name="end" id="" value="{{ $schedule->end }}">
+                            <input type="hidden" name="id" id="" value="{{ $schedule->id }}">
+                            <input type="hidden" name="page" value="edit page">
                         </div>
                     </td>
                 </tr>
@@ -78,7 +104,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Username</span>
                             </div>
-                            <input type="text" class="form-control text-muted" name="username" value="{{ $user->username }}" readonly>
+                            <input type="text" class="form-control text-muted" name="socmed" value="{{ @$user->socmed }}" readonly>
                         </div>
                     </td>
 
@@ -99,7 +125,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Description</span>
                             </div>
-                            <textarea class="form-control" name="description" placeholder="Description"> {{ $schedule->description }}</textarea>
+                            <textarea class="form-control" name="description" placeholder="Description"> {{ $schedule->deskripsi }}</textarea>
                         </div>
                     </td>
                 </tr>
@@ -110,7 +136,7 @@
                                 <span class="input-group-text">Images</span>
                             </div>
                             <div class="custom-file">
-                                <input type="file" accept="image/*" onchange="loadFile(event)" name="image"
+                                <input type="file" accept="image/*" onchange="loadFile(event)" name="gambar"
                                     class="custom-file-input">
                                 <label class="custom-file-label">Choose file</label>
                             </div>
@@ -119,7 +145,7 @@
                 </tr>
             </table>
             <div class="row row-cols-2">
-                <div class="col-auto"><img id="output" src="{{ $schedule->image }}" class="img-fluid" height="200" width="200" /></div>
+                <div class="col-auto"><img id="output" src="{{ Storage::url($schedule->gambar) }}" class="img-fluid" height="200" width="200" /></div>
             </div>
             <div class="row">
                 <div class="col text-right">

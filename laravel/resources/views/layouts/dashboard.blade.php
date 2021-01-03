@@ -1,10 +1,14 @@
+@php
+    checkPackageExpiration();
+@endphp
 <head>
     {{--CSRF Token --}}
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>@yield('title')</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.12.6/sweetalert2.min.js" integrity="sha512-cNaY7ThUQSAxQRW5wvhRBLheHFFAVjnXFFD3K8H7gI1xq+W+tVz9ntPNyoioKpJFc7DyYLWCFem3KBthn7XJTQ==" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="rimas.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/e3dba10297.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{asset('assets/css/dashboard.css')}}">
@@ -13,7 +17,7 @@
 
 <body class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-danger fixed-top">
-        <a class="navbar-brand text-white ml-4" href="{{route('/')}}"><img class="image mb-2" src="assets/img/rimas.png" width="30" height="30"> IMAS</a>
+        <a class="navbar-brand text-white ml-4" href="{{route('/')}}"><img class="image mb-2" src="{{ asset('assets/img/rimas.png') }}" width="30" height="30">DIMAS</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,8 +36,8 @@
 
     <nav class="navbar navbar-expand-lg navbar-danger">
         <div class="ml-4">
-            <a class="navbar-brand text-white" href="{{route('/')}}"><img class="image mb-2" src="assets/img/rimas.png"
-                    width="30" height="30"> IMAS</a>
+            <a class="navbar-brand text-white" href="{{route('/')}}"><img class="image mb-2" src="{{ asset('assets/img/rimas.png') }}"
+                    width="30" height="30">DIMAS</a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,5 +84,10 @@
             event.preventDefault();
             document.getElementById('logout').submit();
         }
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
     </script>
 </body>

@@ -12,6 +12,23 @@
                 <h3>Register</h3>
             </div>
 
+            @if(session('error'))
+            <div class="alert alert-danger">
+                <strong>Error!</strong> {{ session('error') }} 
+            </div>
+            @endif
+
+            
+            @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                @foreach ($errors->all() as $error)
+                    <li> {{ $error }} </li>
+                @endforeach
+                </ul>
+            </div>
+            @endif
+
             <div class="text-center">
                 <form action="{{ route('post.register') }}" method="POST">
                     @csrf

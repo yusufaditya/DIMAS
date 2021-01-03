@@ -43,7 +43,7 @@
                                             allday: true
                                         });
                                         $.ajax({
-                                            url:'/admin/schedule/create',
+                                            url:'/schedule/create',
                                             type:'post',
                                             data:{
                                                 title: eventName,
@@ -73,7 +73,7 @@
                                     var result = confirm('Yakin ingin menghapus Event "' + selectedEvent.title + '" ?');
                                         if(result){
                                             $.ajax({
-                                                url:'/admin/schedule/delete',
+                                                url:'/schedule/delete',
                                                 type:'delete',
                                                 data:{
                                                     'id':selectedEvent.id
@@ -99,7 +99,7 @@
                             click: function () {
                                 if (selId != '') {
                                     var id = "/" + "id"; //Id Event
-                                    document.location.assign('/admin/schedule/edit/' + selId);
+                                    document.location.assign('/schedule/edit/' + selId);
                                 } else {
                                     alert('Tidak ada event yang dipilih');
                                 }
@@ -155,7 +155,7 @@
                                     end = "".concat(end.split("-")[0],"-",end.split("-")[1],"-",(parseInt(end.split("-")[2])+1).toString());
                                     console.log("End : "+end);
                                     $.ajax({
-                                        url:"/admin/schedule/edit",
+                                        url:"/schedule/edit",
                                         type:"PATCH",
                                         data:{
                                             'id':info.event.id,
@@ -180,7 +180,7 @@
                                     var end = info.event.end.toISOString().split("T")[0];
                                     end = "".concat(end.split("-")[0],"-",end.split("-")[1],"-",(parseInt(end.split("-")[2])+1).toString());
                                     $.ajax({
-                                        url:"/admin/schedule/edit",
+                                        url:"/schedule/edit",
                                         type:"PATCH",
                                         data:{
                                             'id':info.event.id,
