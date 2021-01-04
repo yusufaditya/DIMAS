@@ -3,9 +3,11 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PaketController;
 use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\WebsiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,9 +79,7 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('/dashboard');
 
-    Route::get('/schedule', function () {
-        return view('dashboard.schedule');
-    })->name('/schedule');
+    Route::get('/schedule', [ScheduleController::class, 'index'])->name('/schedule');
 
     Route::post('/konfirmasi-beli-paket', [PaketController::class, 'store']);
 
@@ -92,11 +92,20 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::delete('/schedule/delete', [ScheduleController::class, 'destroy']);
 
+    Route::get('/company-profile', [CompanyController::class, 'index']);
+
+    Route::post('/profile/store', [CompanyController::class, 'store']);
+
     Route::get('/detail-schedule/{id}', [ScheduleController::class, 'show']);
 
     Route::get('/plan', function () {
         return view('dashboard.buy_plan');
     })->name('/plan');
+
+
+    Route::get('/website', [WebsiteController::class, 'index'])->name('/website');
+
+    Route::get('/website/list-produk',[WebsiteController::class,'showListProduct'])->name('/list-product');
 
 });
 

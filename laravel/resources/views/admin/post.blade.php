@@ -45,7 +45,7 @@
 @section('mainContent')
 <div class="row h-100">
     <div class="col-1 m-3 h3">
-        <a href="{{ url('admin/schedule/' . $schedule->id) }}">
+        <a href="{{ url('admin/schedule/' . $user->id) }}">
             <i class="fas fa-arrow-left"></i>
         </a>
         

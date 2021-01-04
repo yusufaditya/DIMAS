@@ -40,39 +40,39 @@ class PaketController extends Controller
         $futureDate = date('Y-m-d H:i:s', strtotime('+1 year', strtotime($startDate)) );
         $plan = [
             [
-                "nama_plan" => "Bundle Premium ",
+                "nama_plan" => "Bundle Premium",
                 "deskripsi" => "Bundle Premium mendapatkan fitur bla bla bla",
                 "harga" => 5500000
             ],[
-                "nama_plan" => "Bundle Gold ",
+                "nama_plan" => "Bundle Gold",
                 "deskripsi" => "Bundle Premium mendapatkan fitur bla bla bla",
                 "harga" => 4000000
             ],[
-                "nama_plan" => "Bundle Regular ",
+                "nama_plan" => "Bundle Regular",
                 "deskripsi" => "Bundle Premium mendapatkan fitur bla bla bla",
                 "harga" => 3000000
             ],[
-                "nama_plan" => "Website Premium ",
+                "nama_plan" => "Website Premium",
                 "deskripsi" => "Website Premium mendapatkan fitur bla bla bla",
                 "harga" => 3000000
             ],[
-                "nama_plan" => "Website Gold ",
+                "nama_plan" => "Website Gold",
                 "deskripsi" => "Website Premium mendapatkan fitur bla bla bla",
                 "harga" => 2000000
             ],[
-                "nama_plan" => "Website Regular ",
+                "nama_plan" => "Website Regular",
                 "deskripsi" => "Website Premium mendapatkan fitur bla bla bla",
                 "harga" => 1000000
             ],[
-                "nama_plan" => "Social Media Premium ",
+                "nama_plan" => "Social Media Premium",
                 "deskripsi" => "Social Media Premium mendapatkan fitur bla bla bla",
                 "harga" => 3000000
             ],[
-                "nama_plan" => "Social Media Gold ",
+                "nama_plan" => "Social Media Gold",
                 "deskripsi" => "Social Media Premium mendapatkan fitur bla bla bla",
                 "harga" => 2000000
             ],[
-                "nama_plan" => "Social Media Regular ",
+                "nama_plan" => "Social Media Regular",
                 "deskripsi" => "Social Media Premium mendapatkan fitur bla bla bla",
                 "harga" => 1000000
             ],

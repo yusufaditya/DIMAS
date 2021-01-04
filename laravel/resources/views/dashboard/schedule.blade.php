@@ -106,11 +106,22 @@
 </script>
 @endsection
 
-@section('content')
+@if ($socialMedia)  
+    @section('content')
     <div class="row">
         <div class="col p-5"><div id="calendar"></div></div>
     </div>
+    @endsection
+@else
+@section('content')
+<div class="alert alert-danger col-5 text-center m-3">
+    <h5>
+        {{ $message }}
+    </h5>
+</div>
 @endsection
+
+@endif
 
 @section('home', '')
 @section('schedule', 'acive')

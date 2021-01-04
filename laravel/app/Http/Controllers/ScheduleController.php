@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Paket;
 use Illuminate\Http\Request;
 use App\Models\Schedule;
 use App\Models\User;
@@ -16,7 +17,50 @@ class ScheduleController extends Controller
      */
     public function index()
     {
-        return view('schedule');
+        $plan = Paket::where('id_user', Auth::id())->where('status','active')->orderBy('id', 'desc')->first();
+        $socialMedia = null;
+        $website = null;
+        $message = "Anda belum membeli plan untuk sosial media";
+        if($plan){
+            if($plan->status_pembayaran == 'pending'){
+                $message = "Anda belum menyelesaikan pembayaran";
+                return view('dashboard.schedule', compact('socialMedia', 'website', 'message'));
+            }
+            switch(strtolower($plan->paket)){
+                
+                case 'bundle premium':
+                    $socialMedia = $plan;
+                    $website = $plan;
+                    break;
+                case 'bundle gold':
+                    $socialMedia = $plan;
+                    $website = $plan;
+                    break;
+                case 'bundle regular':
+                    $socialMedia = $plan;
+                    $website = $plan;
+                    break;
+                case 'web premium':
+                    $website = $plan;
+                    break;
+                case 'web gold':
+                    $website = $plan;
+                    break;
+                case 'web regular':
+                    $website = $plan;
+                    break;
+                case 'social media premium':
+                    $socialMedia = $plan;
+                    break;
+                case 'social media gold':
+                    $socialMedia = $plan;
+                    break;
+                case 'social media regular':
+                    $socialMedia = $plan;
+                    break;
+            }
+        }
+        return view('dashboard.schedule', compact('socialMedia', 'website', 'message'));
     }
 
     public function getData($id){

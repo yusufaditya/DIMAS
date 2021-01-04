@@ -10,6 +10,8 @@
     <link rel="shortcut icon" href="rimas.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/e3dba10297.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{asset('assets/css/dashboard.css')}}">
     @yield('plugin')
@@ -68,6 +70,15 @@
                     <div class="col align-self-center">Schedule</div>
                 </div>
             </a>
+
+            {{-- Web --}}
+            <a href="{{route('/website')}}" class="sidebar-link @yield('website')">
+                <div class="row sidebar-link @yield('website')">
+                    <div class="col-1 m-3"><i class="fas fa-globe-asia fa-2x" aria-hidden="true"></i></div>
+                    <div class="col align-self-center">Website</div>
+                </div>
+            </a>
+           
 
             {{-- Sign Out --}}
             <a href="{{ route('logout') }}" class="sidebar-link" >
