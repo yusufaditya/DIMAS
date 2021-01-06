@@ -72,6 +72,26 @@
     <!-- End of Navbar -->
 
         @yield('mainContent')
+        <div class="row page-footer pt-4">
+            <div class="col-md p-3">
+                <h5 class="mb-4">ALAMAT</h5>
+                <p class="m-0">Office :</p>
+                <p class="text-info font-weight-bold">Jl. Rd. Dewisartika No.108 Pungkur, Regol, Bandung, Jawa Barat</p>
+            </div>
+            <div class="col-md p-3">
+                <h5 class="mb-4">EMAIL</h5>
+                <p class="text-info font-weight-bold">Loremipsum@gmail.com</p>
+            </div>
+            <div class="col-md p-3">
+                <h5 class="mb-4">KONTAK</h5>
+                <p class="text-info font-weight-bold">+62 123-1231-123</p>
+            </div>
+            <div class="col-md p-3">
+                <h5 class="mb-4">SOSIAL MEDIA</h5>
+                <a href=""><p class="text-info font-weight-normal"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i> DIMAS</p></a>
+                <a href=""><p class="text-info font-weight-normal"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i> DIMAS</p></a>
+            </div>
+        </div>
 </body>
 
 <!-- script display -->
