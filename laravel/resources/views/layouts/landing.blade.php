@@ -35,21 +35,21 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item pl-5 pr-5 p-2 text-center">
-                    <a class="nav-link text-info active" href="{{route('/')}}">Home</a>
+                    <a class="nav-link text-info active" href="{{route('/')}}">Beranda</a>
                 </li>
                 <li class="nav-item pl-5 pr-5 p-2 text-center">
-                    <a class="nav-link text-info" href="{{route('/about')}}">About</a>
+                    <a class="nav-link text-info" href="{{route('/about')}}">Tentang Kami</a>
                 </li>
                 <li class="nav-item pl-5 pr-5 p-2 text-center">
-                    <a class="nav-link text-info" href="{{route('/service')}}">Service</a>
+                    <a class="nav-link text-info" href="{{route('/service')}}">Layanan</a>
                 </li>
                 <li class="nav-item pl-5 pr-5 p-2 text-center">
-                    <a class="nav-link text-info" href="{{route('/contact')}}">Contact</a>
+                    <a class="nav-link text-info" href="{{route('/contact')}}">Kontak</a>
                 </li>
 
                 {{-- Kalo belum Login --}}
                 <li class="nav-item pl-5 pr-5 p-2 text-center d-none">
-                    <a class="nav-link text-primary" href="{{route('/login')}}">Login</a>
+                    <a class="nav-link text-primary" href="{{route('/login')}}">Masuk</a>
                 </li>
                 
                 {{-- Kalo sudah Login --}}
