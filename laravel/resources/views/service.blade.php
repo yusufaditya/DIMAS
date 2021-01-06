@@ -7,7 +7,7 @@
 <div class="landing row">
     <div class="col-1"> {{-- OFFSET--}} </div>
     <div class="col-md m-auto p-5">
-        <h1>Our Service</h1>
+        <h1>Layanan Kami</h1>
         <h3>DIMAS</h3>
         <p>Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet Lorem Ipsum dolor Lorem Ipsum
             dolor sit amet Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet
@@ -43,8 +43,8 @@
             <div id="smmm" class="card btn btn-outline-info">
                 <input type="radio" name="service" hidden checked>
                 <div class="card-body">
-                    <h5 class="card-title">Social Media Monitoring</h5>
-                    <h6 class="card-subtitle mb-2">Our Service</h6>
+                    <h5 class="card-title">Pantauan Social Media</h5>
+                    <h6 class="card-subtitle mb-2">Layanan Kami</h6>
                 </div>
             </div>
         </center>
@@ -56,8 +56,8 @@
             <div id="bwm" class="card btn btn-outline-info">
                 <input type="radio" name="service" hidden>
                 <div class="card-body">
-                    <h5 class="card-title">Building Website</h5>
-                    <h6 class="card-subtitle mb-2">Our Service</h6>
+                    <h5 class="card-title">Bangun Website</h5>
+                    <h6 class="card-subtitle mb-2">Layanan Kami</h6>
                 </div>
             </div>
         </center>
@@ -69,8 +69,8 @@
             <div id="tpm" class="card btn btn-outline-info">
                 <input type="radio" name="service" hidden>
                 <div class="card-body">
-                    <h5 class="card-title">Thematic Posting</h5>
-                    <h6 class="card-subtitle mb-2">Our Service</h6>
+                    <h5 class="card-title">Unggahan Bertema</h5>
+                    <h6 class="card-subtitle mb-2">Layanan Kamu</h6>
                 </div>
             </div>
         </center>
@@ -82,8 +82,8 @@
             <div id="spm" class="card btn btn-outline-info">
                 <input type="radio" name="service" hidden>
                 <div class="card-body">
-                    <h5 class="card-title">Schedule Posting</h5>
-                    <h6 class="card-subtitle mb-2">Our Service</h6>
+                    <h5 class="card-title">Jadwal Unggahan</h5>
+                    <h6 class="card-subtitle mb-2">Layanan Kami</h6>
                 </div>
             </div>
         </center>
@@ -100,7 +100,7 @@
             </div>
             <div class="col m-auto">
                 <div class="col text-center">
-                    <h3>Social Media Monitoring</h3>
+                    <h3>Pantauan Social Media</h3>
                 </div>
                 <div class="colp-4">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -124,7 +124,7 @@
             </div>
             <div class="col m-auto">
                 <div class="col text-center">
-                    <h3>Building Website</h3>
+                    <h3>Bangun Website</h3>
                 </div>
                 <div class="col p-4">
                     <p>Digital marketing adalah suatu kegiatan pemasaran atau promosi sebuah brand atau
@@ -146,7 +146,7 @@
             </div>
             <div class="col m-auto">
                 <div class="col text-center">
-                    <h3>Thematic Posting</h3>
+                    <h3>Unggahan Bertema</h3>
                 </div>
                 <div class="col p-4">
                     <p>Digital marketing adalah suatu kegiatan pemasaran atau promosi sebuah brand atau
@@ -168,7 +168,7 @@
             </div>
             <div class="col m-auto">
                 <div class="col text-center">
-                    <h3>Schedule Posting</h3>
+                    <h3> Jadwal Unggahan</h3>
                 </div>
                 <div class="col">
                     <p>Digital marketing adalah suatu kegiatan pemasaran atau promosi sebuah brand atau
@@ -188,7 +188,7 @@
     <div class="col-md m-auto">
         <div class="col m-auto">
             <div class="col text-center">
-                <h1>Benefit</h1>
+                <h1>Manfaat</h1>
                 <hr style="height: 3px;background-color:  #aeebf3;width: 200px;">
             </div>
             <div class="col p-4">
@@ -212,17 +212,17 @@
 <!-- Title -->
 <div class="row">
     <div class="col">
-        <h1 class="text-center">Pricing Service</h1>
-        <p class="text-center">Let's Make a deal for your Company</p>
+        <h1 class="text-center">Harga Layanan</h1>
+        <p class="text-center">Mari Buat Kesepakatan Dengan Perusahaan Anda</p>
         <div class="btn-group-toggle text-center" data-toggle="buttons">
             <label for="bundle" class="btn btn-outline-info ml-2 mr-2 active">
-                <input type="radio" checked class="toggle_option" id="bundle" name="toggle_option">Bundle
+                <input type="radio" checked class="toggle_option" id="bundle" name="toggle_option">Paket Lengkap
             </label>
             <label for="website" class="btn btn-outline-info ml-2 mr-2">
-                <input type="radio" class="toggle_option" id="website" name="toggle_option">Website
+                <input type="radio" class="toggle_option" id="website" name="toggle_option">Paket Website
             </label>
             <label for="medsos" class="btn btn-outline-info ml-2 mr-2">
-                <input type="radio" class="toggle_option" id="medsos" name="toggle_option">Media Social
+                <input type="radio" class="toggle_option" id="medsos" name="toggle_option">Paket Media Social
             </label>
         </div>
     </div>
@@ -242,7 +242,7 @@
                                 <center>Premium</center>
                             </h5>
                             <h6 class="card-subtitle mb-2 text-muted">
-                                <center>1 Year Access (Full Access)</center>
+                                <center>1 Tahun Akses (Akses Penuh)</center>
                             </h6>
                         </div>
                         <div class="col-md-12">
@@ -255,32 +255,27 @@
                                     <div class="col-md-12">
                                         <p style="font-size: 18px; text-align: center;"><span><i
                                                     class="fas fa-check-circle "
-                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Building
-                                            Website</p>
+                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Bangun Website</p>
                                     </div>
                                     <div class="col-md-12">
                                         <p style="font-size: 18px; text-align: center;"><span><i
                                                     class="fas fa-check-circle "
-                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Thematic
-                                            Posting</p>
+                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Postingan Bertema</p>
                                     </div>
                                     <div class="col-md-12">
                                         <p style="font-size: 18px; text-align: center;"><span><i
                                                     class="fas fa-check-circle "
-                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Maintanance
-                                            Website</p>
+                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Pemeliharaan Website</p>
                                     </div>
                                     <div class="col-md-12">
                                         <p style="font-size: 18px; text-align: center;"><span><i
                                                     class="fas fa-check-circle "
-                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Maintanance
-                                            Social Media</p>
+                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Pemeliharaan Social Media</p>
                                     </div>
                                     <div class="col-md-12">
                                         <p style="font-size: 18px; text-align: center;"><span><i
                                                     class="fas fa-check-circle "
-                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Schedule
-                                            Posting</p>
+                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Jadwal Unggahan</p>
                                     </div>
                                 </div>
                             </div>
@@ -300,7 +295,7 @@
                                 <center>Gold</center>
                             </h5>
                             <h6 class="card-subtitle mb-2 text-muted">
-                                <center>1 Year Access (Half Access)</center>
+                                <center>1 Tahun (Setengah Akses)</center>
                             </h6>
                         </div>
                         <div class="col-md-12">
@@ -315,50 +310,41 @@
                                             <div class="col-md-12">
                                                 <p style="font-size: 18px; text-align: center;"><span><i
                                                             class="fas fa-check-circle "
-                                                            style="color: lightgreen; margin-right: 5px;"></i></span>Building
-                                                    Website</p>
+                                                            style="color: lightgreen; margin-right: 5px;"></i></span>Bangun Website</p>
                                             </div>
                                             <div class="col-md-12">
                                                 <p style="font-size: 13px; text-align: center;"><span><i
                                                             class="fas fa-minus-circle"
-                                                            style="margin-right: 5px; color: red;"></i></span>(Without
-                                                    Showing Product on
-                                                    Website)</p>
+                                                            style="margin-right: 5px; color: red;"></i></span>(Tanpa Menampilkan Produk di Website)</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <p style="font-size: 18px; text-align: center;"><span><i
                                                     class="fas fa-check-circle "
-                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Thematic
-                                            Posting</p>
+                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Posting Bertema</p>
                                     </div>
                                     <div class="col-md-12">
                                         <p style="font-size: 18px; text-align: center;"><span><i
                                                     class="fas fa-check-circle "
-                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Maintanance
-                                            Website</p>
+                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Pemeliharaan Website</p>
                                     </div>
                                     <div class="col-md-12">
                                         <p style="font-size: 18px; text-align: center;"><span><i
                                                     class="fas fa-check-circle "
-                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Maintanance
-                                            Social Media</p>
+                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Pemeliharaan Social Media</p>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <p style="font-size: 18px; text-align: center;"><span><i
                                                             class="fas fa-check-circle "
-                                                            style="color: lightgreen; margin-right: 5px;"></i></span>Schedule
-                                                    Posting</p>
+                                                            style="color: lightgreen; margin-right: 5px;"></i></span>Jadwal Unggahan</p>
                                             </div>
                                             <div class="col-md-12">
                                                 <p style="font-size: 13px; text-align: center;"><span><i
                                                             class="fas fa-minus-circle"
-                                                            style="margin-right: 5px; color: red;"></i></span>(Without
-                                                    Posting on Big Day
-                                                    Celebration)</p>
+                                                            style="margin-right: 5px; color: red;"></i></span>(Tanpa Unggahan Hari Besar)</p>
                                             </div>
                                         </div>
                                     </div>
@@ -380,7 +366,7 @@
                                 <center>Regular</center>
                             </h5>
                             <h6 class="card-subtitle mb-2 text-muted">
-                                <center>1 Year Access (Early Access)</center>
+                                <center>1 Tahun Akses (Akses Terbatas)</center>
                             </h6>
                         </div>
                         <div class="col-md-12">
@@ -395,34 +381,29 @@
                                             <div class="col-md-12">
                                                 <p style="font-size: 18px; text-align: center;"><span><i
                                                             class="fas fa-check-circle "
-                                                            style="color: lightgreen; margin-right: 5px;"></i></span>Building
-                                                    Website</p>
+                                                            style="color: lightgreen; margin-right: 5px;"></i></span>Bangun Website</p>
                                             </div>
                                             <div class="col-md-12">
                                                 <p style="font-size: 13px; text-align: center;"><span><i
                                                             class="fas fa-minus-circle"
-                                                            style="margin-right: 5px; color: red;"></i></span>(Without
-                                                    Showing Product and
-                                                    Detail on Website)</p>
+                                                            style="margin-right: 5px; color: red;"></i></span>(Tanpa Menampilkan Produk di Website)</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <p style="font-size: 18px; text-align: center;"><span><i
                                                     class="fas fa-check-circle "
-                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Thematic
-                                            Posting</p>
+                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Posting Bertema</p>
                                     </div>
                                     <div class="col-md-12">
                                         <p style="font-size: 18px; text-align: center;"><span><i
                                                     class="fas fa-check-circle "
-                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Maintanance
-                                            Website</p>
+                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Pemeliharaan Website</p>
                                     </div>
                                     <div class="col-md-12">
                                         <p style="font-size: 18px; text-align: center;"><span><i
                                                     class="fas fa-check-circle "
-                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Maintanance
+                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Pemeliharaan
                                             Social Media</p>
                                     </div>
                                     <div class="col-md-12">
@@ -430,15 +411,12 @@
                                             <div class="col-md-12">
                                                 <p style="font-size: 18px; text-align: center;"><span><i
                                                             class="fas fa-check-circle "
-                                                            style="color: lightgreen; margin-right: 5px;"></i></span>Building
-                                                    Website</p>
+                                                            style="color: lightgreen; margin-right: 5px;"></i></span>Jadwal Unggahan</p>
                                             </div>
                                             <div class="col-md-12">
                                                 <p style="font-size: 13px; text-align: center;"><span><i
                                                             class="fas fa-minus-circle"
-                                                            style="margin-right: 5px; color: red;"></i></span>(Without
-                                                    Posting on Big Day
-                                                    Celebration and Upload Every Day)</p>
+                                                            style="margin-right: 5px; color: red;"></i></span>(Tanpa Unggahan Hari Besar)</p>
                                             </div>
                                         </div>
                                     </div>
@@ -463,7 +441,7 @@
                                 <center>Premium Web</center>
                             </h5>
                             <h6 class="card-subtitle mb-2 text-muted">
-                                <center>1 Year Access (Full Access)</center>
+                                <center>1 Tahun Akses (Akses Penuh)</center>
                             </h6>
                         </div>
                         <div class="col-md-12">
@@ -476,20 +454,18 @@
                                     <div class="col-md-12">
                                         <p style="font-size: 18px; text-align: center;"><span><i
                                                     class="fas fa-check-circle "
-                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Landing
-                                            Page</p>
+                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Halaman Arahan</p>
                                     </div>
                                     <div class="col-md-12">
                                         <p style="font-size: 18px; text-align: center;"><span><i
                                                     class="fas fa-check-circle "
-                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Product
-                                            Show</p>
+                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Menampilkan Produk</p>
                                     </div>
                                     <div class="col-md-12">
                                         <p style="font-size: 18px; text-align: center;"><span><i
                                                     class="fas fa-check-circle "
                                                     style="color: lightgreen; margin-right: 5px;"></i></span>Detail
-                                            Webs</p>
+                                            Website</p>
                                     </div>
                                 </div>
                             </div>
@@ -509,7 +485,7 @@
                                 <center>Gold Web</center>
                             </h5>
                             <h6 class="card-subtitle mb-2 text-muted">
-                                <center>1 Year Access (Half Access)</center>
+                                <center>1 Tahun Akses (Setengah Akses)</center>
                             </h6>
                         </div>
                         <div class="col-md-12">
@@ -522,23 +498,19 @@
                                     <div class="col-md-12">
                                         <p style="font-size: 18px; text-align: center;"><span><i
                                                     class="fas fa-check-circle "
-                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Landing
-                                            Page</p>
+                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Halaman Arahan</p>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <p style="font-size: 18px; text-align: center;"><span><i
                                                             class="fas fa-check-circle "
-                                                            style="color: lightgreen; margin-right: 5px;"></i></span>Product
-                                                    Show</p>
+                                                            style="color: lightgreen; margin-right: 5px;"></i></span>Menampilkan Produk</p>
                                             </div>
                                             <div class="col-md-12">
                                                 <p style="font-size: 13px; text-align: center;"><span><i
                                                             class="fas fa-minus-circle"
-                                                            style="margin-right: 5px; color: red;"></i></span>(Without
-                                                    Showing Product on
-                                                    Website)</p>
+                                                            style="margin-right: 5px; color: red;"></i></span>(Tanpa Menampilkan Produk)</p>
                                             </div>
                                         </div>
                                     </div>
@@ -566,7 +538,7 @@
                                 <center>Regular Web</center>
                             </h5>
                             <h6 class="card-subtitle mb-2 text-muted">
-                                <center>1 Year Access (Early Access)</center>
+                                <center>1 Year Access (Akses Terbatas)</center>
                             </h6>
                         </div>
                         <div class="col-md-12">
@@ -579,39 +551,19 @@
                                     <div class="col-md-12">
                                         <p style="font-size: 18px; text-align: center;"><span><i
                                                     class="fas fa-check-circle "
-                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Landing
-                                            Page</p>
+                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Halaman Arahan</p>
                                     </div>
-                                    <div class="col-md-12">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <p style="font-size: 18px; text-align: center;"><span><i
-                                                            class="fas fa-check-circle "
-                                                            style="color: lightgreen; margin-right: 5px;"></i></span>Product
-                                                    Show</p>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <p style="font-size: 13px; text-align: center;"><span><i
-                                                            class="fas fa-minus-circle"
-                                                            style="margin-right: 5px; color: red;"></i></span>(Without
-                                                    Showing Product on
-                                                    Website)</p>
+                                        <div class="col-md-12">
+                                            <p style="font-size: 13px; text-align: center;"><span><i
+                                                    class="fas fa-minus-circle"
+                                                    style="margin-right: 5px; color: red;"></i></span>(Tanpa Menampilkan Produk di Website)</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <p style="font-size: 18px; text-align: center;"><span><i
-                                                            class="fas fa-check-circle "
-                                                            style="color: lightgreen; margin-right: 5px;"></i></span>Detail
-                                                    Website</p>
-                                            </div>
                                             <div class="col-md-12">
                                                 <p style="font-size: 13px; text-align: center;"><span><i
                                                             class="fas fa-minus-circle"
-                                                            style="margin-right: 5px; color: red;"></i></span>(Without
-                                                    Detail on Website)</p>
+                                                            style="margin-right: 5px; color: red;"></i></span>(Tanpa Detail di Website)</p>
                                             </div>
                                         </div>
                                     </div>
@@ -627,7 +579,7 @@
     <!-- End of Bundle -->
     <!-- Medsos -->
     <!-- Premium -->
-    <div class="row" id="mds" style="display: none;">
+    <div class="row" id="webs" style="display: none;">
         <div class="col-md-4" style="margin-top: 20px;">
             <div class="card" style="width: 20rem; height: 34rem;">
                 <div class="card-body">
@@ -637,7 +589,7 @@
                                 <center>Premium Medsos</center>
                             </h5>
                             <h6 class="card-subtitle mb-2 text-muted">
-                                <center>1 Year Access (Full Access)</center>
+                                <center>1 Tahun Akses (Akses Penuh)</center>
                             </h6>
                         </div>
                         <div class="col-md-12">
@@ -650,20 +602,18 @@
                                     <div class="col-md-12">
                                         <p style="font-size: 18px; text-align: center;"><span><i
                                                     class="fas fa-check-circle "
-                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Landing
-                                            Page</p>
+                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Halaman Arahan</p>
                                     </div>
                                     <div class="col-md-12">
                                         <p style="font-size: 18px; text-align: center;"><span><i
                                                     class="fas fa-check-circle "
-                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Product
-                                            Show</p>
+                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Menampilkan Produk</p>
                                     </div>
                                     <div class="col-md-12">
                                         <p style="font-size: 18px; text-align: center;"><span><i
                                                     class="fas fa-check-circle "
                                                     style="color: lightgreen; margin-right: 5px;"></i></span>Detail
-                                            Webs</p>
+                                            Website</p>
                                     </div>
                                 </div>
                             </div>
@@ -683,7 +633,7 @@
                                 <center>Gold Medsos</center>
                             </h5>
                             <h6 class="card-subtitle mb-2 text-muted">
-                                <center>1 Year Access (Half Access)</center>
+                                <center>1 Tahun Akses (Setengah Akses)</center>
                             </h6>
                         </div>
                         <div class="col-md-12">
@@ -696,23 +646,19 @@
                                     <div class="col-md-12">
                                         <p style="font-size: 18px; text-align: center;"><span><i
                                                     class="fas fa-check-circle "
-                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Landing
-                                            Page</p>
+                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Halaman Arahan</p>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <p style="font-size: 18px; text-align: center;"><span><i
                                                             class="fas fa-check-circle "
-                                                            style="color: lightgreen; margin-right: 5px;"></i></span>Product
-                                                    Show</p>
+                                                            style="color: lightgreen; margin-right: 5px;"></i></span>Menampilkan Produk</p>
                                             </div>
                                             <div class="col-md-12">
                                                 <p style="font-size: 13px; text-align: center;"><span><i
                                                             class="fas fa-minus-circle"
-                                                            style="margin-right: 5px; color: red;"></i></span>(Without
-                                                    Showing Product on
-                                                    Website)</p>
+                                                            style="margin-right: 5px; color: red;"></i></span>(Tanpa Menampilkan Produk)</p>
                                             </div>
                                         </div>
                                     </div>
@@ -740,7 +686,7 @@
                                 <center>Regular Medsos</center>
                             </h5>
                             <h6 class="card-subtitle mb-2 text-muted">
-                                <center>1 Year Access (Early Access)</center>
+                                <center>1 Year Access (Akses Terbatas)</center>
                             </h6>
                         </div>
                         <div class="col-md-12">
@@ -753,39 +699,19 @@
                                     <div class="col-md-12">
                                         <p style="font-size: 18px; text-align: center;"><span><i
                                                     class="fas fa-check-circle "
-                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Landing
-                                            Page</p>
+                                                    style="color: lightgreen; margin-right: 5px;"></i></span>Halaman Arahan</p>
                                     </div>
-                                    <div class="col-md-12">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <p style="font-size: 18px; text-align: center;"><span><i
-                                                            class="fas fa-check-circle "
-                                                            style="color: lightgreen; margin-right: 5px;"></i></span>Product
-                                                    Show</p>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <p style="font-size: 13px; text-align: center;"><span><i
-                                                            class="fas fa-minus-circle"
-                                                            style="margin-right: 5px; color: red;"></i></span>(Without
-                                                    Showing Product on
-                                                    Website)</p>
+                                        <div class="col-md-12">
+                                            <p style="font-size: 13px; text-align: center;"><span><i
+                                                    class="fas fa-minus-circle"
+                                                    style="margin-right: 5px; color: red;"></i></span>(Tanpa Menampilkan Produk di Website)</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <p style="font-size: 18px; text-align: center;"><span><i
-                                                            class="fas fa-check-circle "
-                                                            style="color: lightgreen; margin-right: 5px;"></i></span>Detail
-                                                    Website</p>
-                                            </div>
                                             <div class="col-md-12">
                                                 <p style="font-size: 13px; text-align: center;"><span><i
                                                             class="fas fa-minus-circle"
-                                                            style="margin-right: 5px; color: red;"></i></span>(Without
-                                                    Detail on Website)</p>
+                                                            style="margin-right: 5px; color: red;"></i></span>(Tanpa Detail di Website)</p>
                                             </div>
                                         </div>
                                     </div>
