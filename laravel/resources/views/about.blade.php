@@ -7,7 +7,7 @@
 <div class="landing row">
     <div class="col-1"> {{-- OFFSET--}} </div>
     <div class="col-md m-auto p-5">
-        <h1>About Us</h1>
+        <h1>Tentang Kami</h1>
         <h3>Digital Marketing Service</h3>
         <p>Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet Lorem Ipsum dolor
             sit amet Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet Lorem
@@ -62,7 +62,7 @@
 <div class="row">
     <div class="col-md-6 mt-5">
         <div class="col-md-12">
-            <h2 class="ml-5">Vision</h2>
+            <h2 class="ml-5">Visi</h2>
             <hr class="underline ml-5">
         </div>
         <div class="col-md-12">
@@ -78,7 +78,7 @@
     <!-- Mission -->
     <div class="col-md-6  mt-5 mb-5">
         <div class="col-md-12">
-            <h2 class="ml-5">Mission</h2>
+            <h2 class="ml-5">Misi</h2>
             <hr class="underline ml-5">
         </div>
         <div class="col-md-12">
@@ -97,7 +97,7 @@
 <div class="row text-white" style="background-color: #58E4F7; text-align: center;">
     <div class="col-md-12 mt-4">
         <center>
-            <h2>OUR COMPANY</h2>
+            <h2>Tentang Perusahaan</h2>
             <hr class="underlines">
         </center>
     </div>
