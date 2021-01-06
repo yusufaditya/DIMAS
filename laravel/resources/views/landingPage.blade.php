@@ -11,7 +11,7 @@
         <h3>Digital Marketing Service</h3>
         <p>Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet Lorem Ipsum dolor
             sit amet Lorem Ipsum dolor sit ametLorem Ipsum dolor sit amet</p>
-        <a class="btn btn-success" role="button" href="{{route('/register')}}"> Join Us Now</a>
+        <a class="btn btn-success" role="button" href="{{route('/register')}}"> Mulai Bersama Kami</a>
     </div>
     <div class="col-md m-auto"><img src="assets/img/vector.png" class="img-fluid"></div>
 </div>
@@ -42,7 +42,7 @@
 {{-- Our Service : Header--}}
 <div class="row row-cols-1">
     <div class="col text-center">
-        <h1>Our Service</h1>
+        <h1>Layanan Kami</h1>
     </div>
     <div class="col">
         <hr style="width: 350px; background-color:  #aeebf3; height: 2px;">
@@ -57,8 +57,8 @@
             <div id="smmm" class="card btn btn-outline-info">
                 <input type="radio" name="service" hidden checked>
                 <div class="card-body">
-                    <h5 class="card-title">Social Media Monitoring</h5>
-                    <h6 class="card-subtitle mb-2">Our Service</h6>
+                    <h5 class="card-title">Pantauan Social Media</h5>
+                    <h6 class="card-subtitle mb-2">Layanan Kami</h6>
                 </div>
             </div>
         </center>
@@ -70,8 +70,8 @@
             <div id="bwm" class="card btn btn-outline-info">
                 <input type="radio" name="service" hidden>
                 <div class="card-body">
-                    <h5 class="card-title">Building Website</h5>
-                    <h6 class="card-subtitle mb-2">Our Service</h6>
+                    <h5 class="card-title">Bangung Website</h5>
+                    <h6 class="card-subtitle mb-2">Layanan Kami</h6>
                 </div>
             </div>
         </center>
@@ -83,8 +83,8 @@
             <div id="tpm" class="card btn btn-outline-info">
                 <input type="radio" name="service" hidden>
                 <div class="card-body">
-                    <h5 class="card-title">Thematic Posting</h5>
-                    <h6 class="card-subtitle mb-2">Our Service</h6>
+                    <h5 class="card-title">Unggahan Bertema</h5>
+                    <h6 class="card-subtitle mb-2">Layanan Kami</h6>
                 </div>
             </div>
         </center>
@@ -96,8 +96,8 @@
             <div id="spm" class="card btn btn-outline-info">
                 <input type="radio" name="service" hidden>
                 <div class="card-body">
-                    <h5 class="card-title">Schedule Posting</h5>
-                    <h6 class="card-subtitle mb-2">Our Service</h6>
+                    <h5 class="card-title">Jadwal Unggahan</h5>
+                    <h6 class="card-subtitle mb-2">Layanan Kami</h6>
                 </div>
             </div>
         </center>
@@ -114,7 +114,7 @@
             </div>
             <div class="col m-auto">
                 <div class="col text-center">
-                    <h3>Social Media Monitoring</h3>
+                    <h3>Pantauan Sosial Media</h3>
                 </div>
                 <div class="colp-4">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -138,7 +138,7 @@
             </div>
             <div class="col m-auto">
                 <div class="col text-center">
-                    <h3>Building Website</h3>
+                    <h3>Bangun Website</h3>
                 </div>
                 <div class="col p-4">
                     <p>Digital marketing adalah suatu kegiatan pemasaran atau promosi sebuah brand atau
@@ -160,7 +160,7 @@
             </div>
             <div class="col m-auto">
                 <div class="col text-center">
-                    <h3>Thematic Posting</h3>
+                    <h3>Unggajan Bertema</h3>
                 </div>
                 <div class="col p-4">
                     <p>Digital marketing adalah suatu kegiatan pemasaran atau promosi sebuah brand atau
@@ -182,7 +182,7 @@
             </div>
             <div class="col m-auto">
                 <div class="col text-center">
-                    <h3>Schedule Posting</h3>
+                    <h3>Jadwal Unggahan</h3>
                 </div>
                 <div class="col p-4">
                     <p>Digital marketing adalah suatu kegiatan pemasaran atau promosi sebuah brand atau
