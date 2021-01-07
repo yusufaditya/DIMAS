@@ -6,6 +6,7 @@ use App\Models\Paket;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class WebsiteController extends Controller
 {
@@ -63,10 +64,12 @@ class WebsiteController extends Controller
     }
 
     public function showListProduct(){
-        $products = [];
+        $products = Product::where('id_user', Auth::id())->get();
         //$products = Product::where('id_pemilik', Auth::id())->get();
+        $id_user = Auth::id();
+       // $url = Storage::url('$path');
 
-        return view('dashboard.website.list-product', compact('products'));
+        return view('dashboard.website.list-product', compact('products','id_user'));
 
     }
 
@@ -89,6 +92,48 @@ class WebsiteController extends Controller
     public function store(Request $request)
     {
         //
+        $rule = [
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10048',
+            'name'=> 'required|string|',
+            'price'=> 'required',
+            'type'=> 'required'
+            ];
+            
+        $this->validate($request, $rule);
+
+        // handle FIle upload
+         /* if($request->hasFile('image')){
+            //get Filename with the extension
+            $filenameWithExt = $request->file('image')->getClientOriginalName();
+            //Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            //get just extwnaion
+            $extension = $request->file('image')->getClientOriginalExtension();
+            //Filename to store
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            //upload image
+            $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
+        }
+        else{
+            $fileNameToStore = 'noimage.jpg';
+        }  */~
+
+       $path = $request->file('image')->store('public/images');
+
+        $data = new Product;
+        $data->nama = $request->input('name');
+        $data->detail = $request->input('detail');
+        $data->deskripsi = $request->input('description');
+        $data->jenis = $request->input('type');
+        $data->harga = $request->input('price');
+        $data->id_user = $request->input('id_user');
+        $data->image = $path;
+        $data->save(); 
+       
+       // $status = Product::create($request->all());
+
+        return redirect()->back()->with('success', 'Produk berhasil ditambah');
+    
     }
 
     /**
@@ -111,6 +156,9 @@ class WebsiteController extends Controller
     public function edit($id)
     {
         //
+       // dd($id);
+       $data = Product::findorfail($id);
+        return view('dashboard.website.product_edit', compact('data'));
     }
 
     /**
@@ -123,6 +171,43 @@ class WebsiteController extends Controller
     public function update(Request $request, $id)
     {
         //
+        //dd($request);
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+        ]);
+         $product = Product::findorfail($id);
+        if($request->hasFile('image')){
+            $request->validate([
+              'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            ]);
+            $path = $request->file('image')->store('public/images');
+            $product->image = $path;
+        }
+
+        $product->nama = $request->name;
+        $product->detail = $request->detail;
+        $product->harga = $request->price;
+        $product->jenis = $request->type;
+        $product->deskripsi = $request->description;
+        $product->save();
+
+       
+       /* //$awal = $ubah->image;
+        
+        $product = [
+            'nama' => $request['name'],
+            'gambar' => $request['image'],
+            'detail' => $request['detail'],
+            'harga' => $request['price'],
+            'jenis' => $request['type'],
+            'deskripsi' => $request['description'],
+        ] ; 
+        $request->image->move(public_path().'/images');
+        $ubah->update($product);*/
+        return redirect()->route('/list-product')
+                        ->with('success','Post updated successfully');
+    
     }
 
     /**
@@ -133,6 +218,20 @@ class WebsiteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        /*
+        $data = Product::where('id',$id)->first(['image']);
+        Storage::delete('public/images/'.$data->image);
+        $product = Product::where('id',$id)->delete(); */
+       
+        $hapus = Product::findorfail($id);
+
+        $file = public_path('/storage/images').$hapus->image;
+        //cek Jika ada gambar
+        if (Storage::exists($file)){
+            //Maka Hapus file di folder public/iamges
+            Storage::delete($file);
+        }
+        $hapus->delete();
+       return redirect()->back()->with("success", 'Product Deleted Successfully');
     }
 }

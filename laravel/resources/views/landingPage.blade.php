@@ -70,7 +70,7 @@
             <div id="bwm" class="card btn btn-outline-info">
                 <input type="radio" name="service" hidden>
                 <div class="card-body">
-                    <h5 class="card-title">Bangung Website</h5>
+                    <h5 class="card-title">Bangun Website</h5>
                     <h6 class="card-subtitle mb-2">Layanan Kami</h6>
                 </div>
             </div>

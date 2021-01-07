@@ -17,7 +17,7 @@
     {{-- Welcome & Plan --}}
     <div class="col">
         <div class="row">
-            <h5>Welcome, {{ Auth::user()->name }}!</h5>
+            <h5>Selamat Datang, {{ Auth::user()->name }}!</h5>
         </div>
         <div class="row">
             <h5 class="text-muted">{{ (!empty($paket) && (@$paket->status == 'active' || @$paket->status_pembayaran = 'pending' || @$paket->status_pembayaran == ''))? "#" . $paket->paket : "No plan yet!" }}</h5>
@@ -25,7 +25,7 @@
     </div>
     {{-- Buy / Recharge Plan --}}
     @if (empty($paket) || (@$paket->status_pembayaran == '' && @$paket->status == 'inactive'))
-    <a class="col m-auto text-right" href="{{route('/plan')}}"><button class="btn-primary rounded p-2 pr-3 pl-3">Buy a Plan</button></a>
+    <a class="col m-auto text-right" href="{{route('/plan')}}"><button class="btn-primary rounded p-2 pr-3 pl-3">Beli Paket</button></a>
     @endif
     
 </div>
@@ -36,7 +36,7 @@
         {{-- Account Activity --}}
         <div class="row">
             <div class="col mb-3 card">
-                <h5 class="card-title mt-3 pl-2 pb-2 border-bottom">Account Activity</h5>
+                <h5 class="card-title mt-3 pl-2 pb-2 border-bottom">Aktivitas Akun</h5>
                 <canvas class="col" id="accountActivity" width="300" height="100"></canvas>
                 <script>
                     var ctx = document.getElementById('accountActivity').getContext('2d');
@@ -80,7 +80,7 @@
         @if (!empty($paket))
         <div class="row">
             <div class="col card mb-3">
-                <h5 class="card-title mt-3 pl-2 pb-2 border-bottom">Package Information</h5>
+                <h5 class="card-title mt-3 pl-2 pb-2 border-bottom">Informasi Paket</h5>
                 <div class="card-text">
                     <h4>{{ $paket->nama }}</h4>
                     <p>{{ $paket->deskripsi }}</p>

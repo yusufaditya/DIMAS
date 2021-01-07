@@ -70,7 +70,7 @@
                 <input type="radio" name="service" hidden>
                 <div class="card-body">
                     <h5 class="card-title">Unggahan Bertema</h5>
-                    <h6 class="card-subtitle mb-2">Layanan Kamu</h6>
+                    <h6 class="card-subtitle mb-2">Layanan Kami</h6>
                 </div>
             </div>
         </center>

@@ -92,8 +92,7 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::delete('/schedule/delete', [ScheduleController::class, 'destroy']);
 
-    Route::get('/company-profile', [CompanyController::class, 'index']);
-
+   
     Route::post('/profile/store', [CompanyController::class, 'store']);
 
     Route::get('/detail-schedule/{id}', [ScheduleController::class, 'show']);
@@ -105,8 +104,16 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::get('/website', [WebsiteController::class, 'index'])->name('/website');
 
-    Route::get('/website/list-produk',[WebsiteController::class,'showListProduct'])->name('/list-product');
+    //Route untuk Profile Company
+    Route::get('/company-profile', [CompanyController::class, 'index']);
+    Route::post('/company-profile', [CompanyController::class, 'store'])->name('/company-profile-store');
 
+    //Route untuk Website Produk
+    Route::get('/website/list-product',[WebsiteController::class,'showListProduct'])->name('/list-product');
+    Route::post('/website/list-product', [WebsiteController::class, 'store'])->name('/list-product-store');
+    Route::delete('/website/list-product-delete/{id}', [WebsiteController::class, 'destroy'])->name('/list-product-delete');
+    Route::get('/website/list-product-edit/{id}', [WebsiteController::class, 'edit'])->name('/list-product-edit');
+    Route::patch('/website/list-product-edit/{id}', [WebsiteController::class, 'update'])->name('/list-product-update');
 });
 
 Route::get('/getCalendarData/{id}',[ScheduleController::class,'getData']);

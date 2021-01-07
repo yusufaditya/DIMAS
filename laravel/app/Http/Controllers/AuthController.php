@@ -27,7 +27,7 @@ class AuthController extends Controller
             $_SESSION['last_login'] = User::select('last_login')->where('id', Auth::id())->first()->last_login;
             User::where('id' , Auth::id())
             ->update(['last_login' => date('Y-m-d H:i:s')]);
-            checkPackageExpiration();
+            //checkPackageExpiration();
             return redirect()->intended('/dashboard');
         }
         return redirect('/login')->with('error','Username / Password salah!');
